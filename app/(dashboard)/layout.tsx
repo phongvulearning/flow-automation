@@ -1,3 +1,5 @@
+"use client";
+
 import BreadscrumbHeader from "@/components/BreadscrumbHeader";
 import DesktopSidebar from "@/components/Sidebar";
 import { ModeToggle } from "@/components/ThemeModeToggle";
