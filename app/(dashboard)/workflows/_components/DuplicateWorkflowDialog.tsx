@@ -17,7 +17,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation } from "@tanstack/react-query";
-import { CreateWorkflow } from "@/actions/workflows/createWorkflow";
 import { toast } from "sonner";
 import { DuplicateWorkflow } from "@/actions/workflows/duplicateWorkflow";
 
@@ -51,12 +50,15 @@ function DuplicateWorkflowDialog({ workflowId }: DuplicateWorkflowDialogProps) {
     },
   });
 
-  const onSubmit = useCallback((values: DuplicateWorkflowSchema) => {
-    toast.loading("Duplicating workflow...", {
-      id: "duplicate-workflow",
-    });
-    mutate(values);
-  }, []);
+  const onSubmit = useCallback(
+    (values: DuplicateWorkflowSchema) => {
+      toast.loading("Duplicating workflow...", {
+        id: "duplicate-workflow",
+      });
+      mutate(values);
+    },
+    [mutate]
+  );
 
   return (
     <Dialog

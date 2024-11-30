@@ -4,7 +4,6 @@ import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
-import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider
-      signUpForceRedirectUrl={"/setup"}
-      afterSignOutUrl="/sign-in"
+      signUpForceRedirectUrl={
+        process.env.NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL
+      }
+      afterSignOutUrl={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}
       appearance={{
         elements: {
           formButtonPrimary:
@@ -30,7 +31,7 @@ export default function RootLayout({
       }}
     >
       <html lang="en" suppressHydrationWarning>
-        <body className={cn(inter.className, "h-screen overflow-hidden")}>
+        <body className={(inter.className, "h-screen overflow-hidden")}>
           <AppProviders
             attribute="class"
             defaultTheme="system"
