@@ -1,3 +1,5 @@
+"use client";
+
 import { GetCredentialsForUser } from "@/actions/credentials/getCredentialsForUser";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card } from "@/components/ui/card";

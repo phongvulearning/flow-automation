@@ -6,7 +6,6 @@ import { CreateWorkflowSchema } from "@/schema/workflow";
 import { Layers2Icon, Loader2 } from "lucide-react";
 import React, { useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
