@@ -1,5 +1,6 @@
-import { GetPeriods } from "@/actions/analytics/getPeriods";
 import React, { Suspense } from "react";
+
+import { GetPeriods } from "@/actions/analytics/getPeriods";
 import PeriodSelector from "./_components/PeriodSelector";
 import { Period } from "@/types/analytics";
 import { Skeleton } from "@/components/ui/skeleton";
