@@ -14,7 +14,9 @@ export async function GetAvailabelCredits() {
     },
   });
 
-  if (!balance) return -1;
+  if (!balance) {
+    throw new Error("User balance not found");
+  }
 
   return balance.credits;
 }
